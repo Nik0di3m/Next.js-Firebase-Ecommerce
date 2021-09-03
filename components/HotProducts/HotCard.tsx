@@ -45,7 +45,7 @@ const HotCard = ({ name, img, limited, promotion, price }: CoolProps) => {
 
     return (
         <article
-            className="flex flex-col w-[310px] h-[366px] xl:w-[400px] xl:h-[420px] 2xl:w-[490px] 2xl:h-[590px] items-center relative"
+            className="flex flex-col w-full h-[366px]  xl:h-[420px] 2xl:h-[590px] items-center relative"
             onMouseOver={() => control.start('visible')}
             onMouseLeave={() => control.start('hidden')}
         >

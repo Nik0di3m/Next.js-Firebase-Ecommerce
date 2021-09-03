@@ -52,7 +52,7 @@ const FreshCard = ({
 
     return (
         <article
-            className="flex flex-col w-[310px] h-[366px] xl:w-[400px] xl:h-[420px] 2xl:w-[350px] 2xl:h-[450px] items-center relative"
+            className="flex flex-col w-full h-[366px] xl:h-[420px] 2xl:h-[450px] items-center relative"
             onMouseOver={() => control.start('visible')}
             onMouseLeave={() => control.start('hidden')}
         >

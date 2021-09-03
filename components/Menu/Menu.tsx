@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/outline'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { initialCart, showCartItem } from '../../slices/cartSlice'
+import { initialCart, showCartItem, removeCart } from '../../slices/cartSlice'
 
 const Menu = () => {
     const dispatch = useDispatch()
@@ -24,7 +24,9 @@ const Menu = () => {
     }, [items])
 
     const handleClickShoppingBag = () => {
-        console.log(items)
+        localStorage.removeItem('cart')
+        dispatch(removeCart())
+        setCartTotalItems(0)
     }
 
     return (

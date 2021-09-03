@@ -19,10 +19,14 @@ export const cartSlice = createSlice({
         initialCart: (state, actions) => {
             state.items = [...actions.payload]
         },
+
+        removeCart: (state) => {
+            state.items = []
+        },
     },
 })
 
-export const { addToCart, initialCart } = cartSlice.actions
+export const { addToCart, initialCart, removeCart } = cartSlice.actions
 
 export const showCartItem = (state) => state.cart.items.length
 
