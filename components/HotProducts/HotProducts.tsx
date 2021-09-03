@@ -7,18 +7,21 @@ const HotProducts = () => {
             <h2>{`Bestseller's especially for You `}</h2>
             <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
                 <HotCard
+                    name="Nike Air Max 90 Laser"
                     price={200}
                     limited={true}
                     promotion={false}
                     img="/images/butyHot.webp"
                 />
                 <HotCard
+                    name="Nike Fontanke Edge"
                     price={200}
                     limited={false}
                     promotion={true}
                     img="/images/buty2.webp"
                 />
                 <HotCard
+                    name="Nike Air Jordan 1 Starfish"
                     price={150}
                     limited={false}
                     promotion={true}

@@ -7,17 +7,19 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../../slices/cartSlice'
 
 interface CoolProps {
+    name: string
     img: string
     limited: boolean
     promotion: boolean
     price: number
 }
 
-const HotCard = ({ img, limited, promotion, price }: CoolProps) => {
+const HotCard = ({ name, img, limited, promotion, price }: CoolProps) => {
     const dispatch = useDispatch()
 
     const addToBucket = () => {
         const product = {
+            name: name,
             img: img,
             price: price,
         }
@@ -52,9 +54,7 @@ const HotCard = ({ img, limited, promotion, price }: CoolProps) => {
             </div>
             <div className="flex justify-between items-center  w-full">
                 <div>
-                    <h2 className="capitalize font-medium">
-                        Nike Air Max 90 Laser
-                    </h2>
+                    <h2 className="capitalize font-medium">{name}</h2>
                     <h3 className="capitalize font-light text-secondary">
                         {`Men's Shoes`}
                     </h3>

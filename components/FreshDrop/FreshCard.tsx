@@ -3,7 +3,10 @@ import { PlusCircleIcon, SearchIcon, HeartIcon } from '@heroicons/react/outline'
 import { HeartIcon as SolidHeart } from '@heroicons/react/solid'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../slices/cartSlice'
 interface CoolProps {
+    name: string
     img: string
     limited: boolean
     price: number
@@ -11,8 +14,26 @@ interface CoolProps {
     promotion: boolean
 }
 
-const FreshCard = ({ img, limited, price, category, promotion }: CoolProps) => {
+const FreshCard = ({
+    name,
+    img,
+    limited,
+    price,
+    category,
+    promotion,
+}: CoolProps) => {
     const [liked, setLiked] = useState<boolean>(false)
+
+    const dispatch = useDispatch()
+
+    const addToBucket = () => {
+        const product = {
+            name: name,
+            img: img,
+            price: price,
+        }
+        dispatch(addToCart(product))
+    }
 
     const control = useAnimation()
 
@@ -40,9 +61,7 @@ const FreshCard = ({ img, limited, price, category, promotion }: CoolProps) => {
             </div>
             <div className="flex justify-between items-center  w-full">
                 <div>
-                    <h2 className="capitalize font-medium">
-                        Nike Air Max 90 Laser
-                    </h2>
+                    <h2 className="capitalize font-medium">{name}</h2>
                     <h3 className="capitalize font-light text-secondary">
                         {category}
                     </h3>
@@ -71,7 +90,10 @@ const FreshCard = ({ img, limited, price, category, promotion }: CoolProps) => {
                     transition={{ type: 'spring', bounce: 0.2 }}
                     className="absolute flex flex-col top-5 right-5 space-y-4"
                 >
-                    <PlusCircleIcon className="h-6 text-secondary hover:scale-105 duration-100 cursor-pointer active:scale-95" />
+                    <PlusCircleIcon
+                        className="h-6 text-secondary hover:scale-105 duration-100 cursor-pointer active:scale-95"
+                        onClick={addToBucket}
+                    />
                     <SearchIcon className="h-6 text-secondary hover:scale-105 duration-100 cursor-pointer active:scale-95" />
                     {liked ? (
                         <SolidHeart

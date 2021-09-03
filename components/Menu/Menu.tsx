@@ -66,7 +66,9 @@ const Menu = () => {
                             className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer"
                             onClick={handleClickShoppingBag}
                         />
-                        <div>{cartTotalItems}</div>
+                        <div className="w-6 flex items-center justify-center text-secondary">
+                            {cartTotalItems}
+                        </div>
                     </div>
                     <UserIcon className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer" />
                 </div>
