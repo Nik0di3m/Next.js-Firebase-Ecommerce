@@ -3,6 +3,9 @@ import { PlusCircleIcon, SearchIcon, HeartIcon } from '@heroicons/react/outline'
 import { HeartIcon as SolidHeart } from '@heroicons/react/solid'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../slices/cartSlice'
+
 interface CoolProps {
     img: string
     limited: boolean
@@ -11,6 +14,16 @@ interface CoolProps {
 }
 
 const HotCard = ({ img, limited, promotion, price }: CoolProps) => {
+    const dispatch = useDispatch()
+
+    const addToBucket = () => {
+        const product = {
+            img: img,
+            price: price,
+        }
+        dispatch(addToCart(product))
+    }
+
     const [liked, setLiked] = useState<boolean>(false)
 
     const control = useAnimation()
@@ -69,7 +82,10 @@ const HotCard = ({ img, limited, promotion, price }: CoolProps) => {
                     transition={{ type: 'spring', bounce: 0.2 }}
                     className="absolute flex flex-col top-5 right-5 space-y-4"
                 >
-                    <PlusCircleIcon className="h-6 text-secondary hover:scale-105 duration-100 cursor-pointer active:scale-95" />
+                    <PlusCircleIcon
+                        className="h-6 text-secondary hover:scale-105 duration-100 cursor-pointer active:scale-95"
+                        onClick={addToBucket}
+                    />
                     <SearchIcon className="h-6 text-secondary hover:scale-105 duration-100 cursor-pointer active:scale-95" />
                     {liked ? (
                         <SolidHeart

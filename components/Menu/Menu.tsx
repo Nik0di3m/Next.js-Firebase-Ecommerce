@@ -5,7 +5,26 @@ import {
     UserIcon,
     MenuIcon,
 } from '@heroicons/react/outline'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { initialCart, showCartItem } from '../../slices/cartSlice'
+
 const Menu = () => {
+    const dispatch = useDispatch()
+    const items = useSelector(showCartItem)
+
+    useEffect(() => {
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        if (cart !== null) {
+            dispatch(initialCart(cart))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    const handleClickShoppingBag = () => {
+        console.log(items)
+    }
+
     return (
         <header className="sticky top-0 flex w-full py-2 px-4 2xl:px-24 items-center justify-between border-b shadow-sm z-50 bg-white">
             {/* Logo */}
@@ -40,7 +59,10 @@ const Menu = () => {
                 {/* User Nav Panel */}
                 <div className="flex space-x-3">
                     <HeartIcon className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer" />
-                    <ShoppingBagIcon className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer" />
+                    <ShoppingBagIcon
+                        className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer"
+                        onClick={handleClickShoppingBag}
+                    />
                     <UserIcon className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer" />
                 </div>
             </div>

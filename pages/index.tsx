@@ -6,6 +6,7 @@ import HotProducts from '../components/HotProducts/HotProducts'
 import Menu from '../components/Menu/Menu'
 import Image from 'next/image'
 import PromotionSection from '../components/PromotionSection/PromotionSection'
+import Footer from '../components/Footer/Footer'
 export default function Home() {
     return (
         <div className="text-primary">
@@ -33,6 +34,7 @@ export default function Home() {
                 </div>
                 <PromotionSection />
             </main>
+            <Footer />
         </div>
     )
 }
