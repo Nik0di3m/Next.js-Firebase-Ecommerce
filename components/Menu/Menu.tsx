@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/outline'
 const Menu = () => {
     return (
-        <header className="sticky top-0 flex w-full py-2 px-4 2xl:px-24 items-center justify-between border-b shadow-sm">
+        <header className="sticky top-0 flex w-full py-2 px-4 2xl:px-24 items-center justify-between border-b shadow-sm z-50 bg-white">
             {/* Logo */}
             <div>
                 <Image
@@ -34,7 +34,7 @@ const Menu = () => {
                     <input
                         type="text"
                         placeholder="Search"
-                        className="bg-gray-300 rounded-xl px-6 py-1 outline-none"
+                        className="bg-gray-100 rounded-2xl px-6 py-1 outline-none"
                     />
                 </div>
                 {/* User Nav Panel */}

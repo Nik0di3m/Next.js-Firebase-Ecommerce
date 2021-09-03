@@ -8,6 +8,8 @@ module.exports = {
     theme: {
         textColor: {
             primary: '#222222',
+            secondary: '#535353',
+            like: '#e84646',
         },
 
         extend: {},

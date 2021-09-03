@@ -1,5 +1,7 @@
 import Head from 'next/head'
+import Ads from '../components/AdsSection/Ads'
 import Hero from '../components/Hero/Hero'
+import HotProducts from '../components/HotProducts/HotProducts'
 import Menu from '../components/Menu/Menu'
 
 export default function Home() {
@@ -15,7 +17,10 @@ export default function Home() {
             </Head>
             <Menu />
             <Hero />
-            <main className="max-w-[1536px] mx-auto"></main>
+            <main className="max-w-[1536px] px-4 mx-auto">
+                <Ads />
+                <HotProducts />
+            </main>
         </div>
     )
 }
