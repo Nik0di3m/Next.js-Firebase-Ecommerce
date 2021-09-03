@@ -4,7 +4,8 @@ import FreshDrop from '../components/FreshDrop/FreshDrop'
 import Hero from '../components/Hero/Hero'
 import HotProducts from '../components/HotProducts/HotProducts'
 import Menu from '../components/Menu/Menu'
-
+import Image from 'next/image'
+import PromotionSection from '../components/PromotionSection/PromotionSection'
 export default function Home() {
     return (
         <div className="text-primary">
@@ -22,6 +23,15 @@ export default function Home() {
                 <Ads />
                 <HotProducts />
                 <FreshDrop />
+                <div>
+                    <Image
+                        src="/images/Newsletter.png"
+                        alt=""
+                        width={1536}
+                        height={572}
+                    />
+                </div>
+                <PromotionSection />
             </main>
         </div>
     )

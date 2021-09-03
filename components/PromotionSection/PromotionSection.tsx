@@ -1,70 +1,70 @@
-import FreshCard from './FreshCard'
+import FreshCard from '../FreshDrop/FreshCard'
 
-const FreshDrop = () => {
+const PromotionSection = () => {
     return (
-        <div className="py-6 lg:py-12">
-            <h1 className="text-4xl">Fresh Drop</h1>
-            <h2>Fresh sneakers especially for you</h2>
+        <section className="py-6 lg:py-12">
+            <h1 className="text-4xl">{`Hot Deal's`}</h1>
+            <h2>{`Catch best deal's in the world `}</h2>
             <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-9 mt-8">
                 <FreshCard
                     price={200}
-                    category="Women's Shoes"
-                    promotion={false}
-                    limited={false}
-                    img="/images/fresh1.webp"
-                />
-                <FreshCard
-                    price={200}
-                    promotion={false}
-                    category="Men's Shoes"
-                    limited={false}
-                    img="/images/fresh6.webp"
-                />
-                <FreshCard
-                    price={200}
-                    promotion={false}
-                    category="Men's Shoes"
-                    limited={false}
-                    img="/images/fresh3.webp"
-                />
-                <FreshCard
-                    price={200}
-                    promotion={false}
-                    category="Men's Shoes"
-                    limited={false}
-                    img="/images/fresh4.webp"
-                />
-                <FreshCard
-                    price={200}
-                    promotion={false}
+                    promotion={true}
                     category="Women's Shoes"
                     limited={false}
-                    img="/images/fresh5.webp"
+                    img="/images/prom1.webp"
                 />
                 <FreshCard
                     price={200}
-                    promotion={false}
+                    promotion={true}
                     category="Women's Shoes"
                     limited={false}
-                    img="/images/fresh2.webp"
+                    img="/images/prom2.webp"
                 />
                 <FreshCard
                     price={200}
-                    promotion={false}
-                    category="Men's Shoes"
-                    limited={false}
-                    img="/images/fresh7.webp"
-                />
-                <FreshCard
-                    price={200}
-                    promotion={false}
+                    promotion={true}
                     category="Women's Shoes"
                     limited={false}
-                    img="/images/fresh8.jpg"
+                    img="/images/prom3.webp"
+                />
+                <FreshCard
+                    price={200}
+                    promotion={true}
+                    category="Women's Shoes"
+                    limited={false}
+                    img="/images/prom4.webp"
+                />
+                <FreshCard
+                    price={200}
+                    promotion={true}
+                    category="Women's Shoes"
+                    limited={false}
+                    img="/images/prom5.webp"
+                />
+                <FreshCard
+                    price={200}
+                    promotion={true}
+                    category="Women's Shoes"
+                    limited={false}
+                    img="/images/prom6.webp"
+                />
+                <FreshCard
+                    price={200}
+                    promotion={true}
+                    category="Women's Shoes"
+                    limited={false}
+                    img="/images/prom7.webp"
+                />
+                <FreshCard
+                    price={200}
+                    promotion={true}
+                    category="Women's Shoes"
+                    limited={false}
+                    img="/images/prom8.webp"
                 />
             </div>
-        </div>
+        </section>
     )
 }
 
-export default FreshDrop
+export default PromotionSection

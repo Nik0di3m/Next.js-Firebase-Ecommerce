@@ -8,9 +8,10 @@ interface CoolProps {
     limited: boolean
     price: number
     category: string
+    promotion: boolean
 }
 
-const FreshCard = ({ img, limited, price, category }: CoolProps) => {
+const FreshCard = ({ img, limited, price, category, promotion }: CoolProps) => {
     const [liked, setLiked] = useState<boolean>(false)
 
     const control = useAnimation()
@@ -51,7 +52,16 @@ const FreshCard = ({ img, limited, price, category }: CoolProps) => {
                         </h3>
                     )}
                 </div>
-                <div>${price}</div>
+                {promotion ? (
+                    <div className="flex flex-col">
+                        <span className="line-through text-secondary">
+                            ${price}
+                        </span>
+                        <span>${price - price * 0.2}</span>
+                    </div>
+                ) : (
+                    <span>${price}</span>
+                )}
             </div>
             <AnimatePresence exitBeforeEnter>
                 <motion.div
