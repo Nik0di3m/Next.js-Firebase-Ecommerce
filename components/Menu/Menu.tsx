@@ -6,11 +6,12 @@ import {
     MenuIcon,
 } from '@heroicons/react/outline'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { initialCart, showCartItem } from '../../slices/cartSlice'
 
 const Menu = () => {
     const dispatch = useDispatch()
+    let [cartTotalItems, setCartTotalItems] = useState<number>(0)
     const items = useSelector(showCartItem)
 
     useEffect(() => {
@@ -18,8 +19,9 @@ const Menu = () => {
         if (cart !== null) {
             dispatch(initialCart(cart))
         }
+        setCartTotalItems(items)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [items])
 
     const handleClickShoppingBag = () => {
         console.log(items)
@@ -59,10 +61,13 @@ const Menu = () => {
                 {/* User Nav Panel */}
                 <div className="flex space-x-3">
                     <HeartIcon className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer" />
-                    <ShoppingBagIcon
-                        className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer"
-                        onClick={handleClickShoppingBag}
-                    />
+                    <div className="flex items-center space-x-1">
+                        <ShoppingBagIcon
+                            className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer"
+                            onClick={handleClickShoppingBag}
+                        />
+                        <div>{cartTotalItems}</div>
+                    </div>
                     <UserIcon className="h-6 hover:scale-105 duration-100 ease-in cursor-pointer" />
                 </div>
             </div>
