@@ -45,11 +45,11 @@ const HotCard = ({ name, img, limited, promotion, price }: CoolProps) => {
 
     return (
         <article
-            className="flex flex-col w-full h-[366px]  xl:h-[420px] 2xl:h-[590px] items-center relative"
+            className="flex flex-col w-full h-[366px] xl:h-[420px] 2xl:h-[590px] items-center relative"
             onMouseOver={() => control.start('visible')}
             onMouseLeave={() => control.start('hidden')}
         >
-            <div className="w-full h-[310px] lg:h-[400px] 2xl:h-[500px] relative">
+            <div className="w-full h-[310px] lg:min-h-[400px] 2xl:h-[500px] relative">
                 <Image src={img} alt="item" layout="fill" objectFit="cover" />
             </div>
             <div className="flex justify-between items-center  w-full">
