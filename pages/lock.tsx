@@ -1,6 +1,6 @@
 import nookies from 'nookies'
-import { verifyIdToken } from '../firebaseAdmin'
-import app from '../firebase'
+import { verifyIdToken } from '../auth/firebaseAdmin'
+import app from '../auth/firebase'
 import firebase from 'firebase/app'
 
 const Lock = ({ session }) => {

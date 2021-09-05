@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { initialCart, showCartItem, removeCart } from '../../slices/cartSlice'
 import Link from 'next/link'
-import { useAuth } from '../../auth'
+import { useAuth } from '../../auth/auth'
 import firebase from 'firebase/app'
 
 const Menu = () => {

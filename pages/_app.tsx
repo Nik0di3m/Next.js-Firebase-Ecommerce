@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import { store } from '../app/store'
-import { AuthProvider } from '../auth'
+import { AuthProvider } from '../auth/auth'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
