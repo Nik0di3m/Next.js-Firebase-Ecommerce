@@ -31,7 +31,8 @@ export async function getServerSideProps(context) {
             props: { session: `${email} ${uid}` },
         }
     } catch (err) {
-        context.res.writeHead(302, { location: '/login' })
-        return false
+        return {
+            props: { session: null },
+        }
     }
 }
