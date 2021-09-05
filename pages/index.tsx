@@ -7,7 +7,17 @@ import Menu from '../components/Menu/Menu'
 import Image from 'next/image'
 import PromotionSection from '../components/PromotionSection/PromotionSection'
 import Footer from '../components/Footer/Footer'
+import { useAuth } from '../auth'
+import { useEffect } from 'react'
 export default function Home() {
+    const { user } = useAuth()
+
+    useEffect(() => {
+        if (user) {
+            console.log(user)
+        }
+    }, [])
+
     return (
         <div className="text-primary">
             <Head>
